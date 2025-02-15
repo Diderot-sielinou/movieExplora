@@ -107,7 +107,7 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black shadow-lg">
             {["Home", "Movies", "Series", " Trending", "Categories"].map(
               (item) => (
                 <a
