@@ -1,3 +1,6 @@
+window.reactRouterExperimentalFlags = { v7_startTransition: true };
+   
+
 import { createContext, useState } from "react";
 import PropTypes from "prop-types";
 
@@ -9,9 +12,10 @@ export const MovieData = ({ children }) => {
   const [action, setAction] = useState([]);
   const [romance, setRomance] = useState([]);
   const [comedy, setComedy] = useState([]);
+  const [favorie, setfavorie] = useState([]);
   return (
     <DataContext.Provider
-      value={{action,setAction,romance,setRomance,comedy,setComedy, treding, searches, setSearches, setTreding }}
+      value={{favorie,setfavorie,action,setAction,romance,setRomance,comedy,setComedy, treding, searches, setSearches, setTreding }}
     >
       {children}
     </DataContext.Provider>

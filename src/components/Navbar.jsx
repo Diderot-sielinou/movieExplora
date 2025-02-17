@@ -51,7 +51,7 @@ export default function Navbar() {
             {/* Navigation desktop */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                {[ {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"/favorie",path:"favorie"},{name:"Trending",path:"#"}].map(
+                {[ {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"favorie",path:"/favorie"},{name:"Trending",path:"#"}].map(
                   (item) => (
                     <motion.div
                       initial={{ opacity: 0, y: -70 }}
@@ -126,6 +126,7 @@ export default function Navbar() {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: -20 }}
+          
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black shadow-lg">
             { {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"/favorie",path:"favorie"},{name:"Trending",path:"#"}.map(

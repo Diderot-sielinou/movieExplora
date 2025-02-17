@@ -2,7 +2,7 @@ import { X } from "lucide-react";
 
 export default function Footer() {
   return (
-    <div className="text-white md:py-3.5 w-full h-[248px] mb-2 ">
+    <div className="text-white md:py-3.5 w-full h-[248px] mb-2 mt-10 ">
       <div className="pl-12 pr-12 flex flex-col justify-between md:flex-row ">
         <div className="flex flex-col gap-1.5">
           <h2 className=" font-inter text-[18px] font-[500] mb-1.5 ">

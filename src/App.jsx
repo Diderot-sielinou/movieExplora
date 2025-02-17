@@ -1,3 +1,5 @@
+window.reactRouterExperimentalFlags = { v7_startTransition: true };
+   
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import "./App.css";
 // import Header from "./components/Header";
