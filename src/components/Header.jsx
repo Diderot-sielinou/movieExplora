@@ -32,18 +32,18 @@ export default function Header() {
               <img className="object-cover " src={img} alt="ee" />
             </div>
             <div className="w-[401px] h-[36px] mx-auto flex items-baseline space-x-1 justify-between px-5 my-1.5">
-              <spa className="font-Roboto text-[20px] text-amber-50 rounded-full border border-amber-100 p-0.5">
+              <span className="font-Roboto text-[20px] text-amber-50 rounded-full border border-amber-100 p-0.5">
                 CBFC:U/A.
-              </spa>
-              <spa className="font-Roboto text-[20px] text-amber-50  p-0.5">
+              </span>
+              <span className="font-Roboto text-[20px] text-amber-50  p-0.5">
                 Action.
-              </spa>
-              <spa className="font-Roboto text-[20px] text-amber-50 p-0.5">
+              </span>
+              <span className="font-Roboto text-[20px] text-amber-50 p-0.5">
                 Adventure.
-              </spa>
-              <spa className="font-Roboto text-[20px] text-amber-50 p-0.5">
+              </span>
+              <span className="font-Roboto text-[20px] text-amber-50 p-0.5">
                 2h 28m
-              </spa>
+              </span>
             </div>
             <div className="w-[436px]h-auto mx-auto text-center my-3">
               <p className="font-inter font-normal text-[16px]">

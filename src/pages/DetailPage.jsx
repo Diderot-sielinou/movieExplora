@@ -1,6 +1,9 @@
+import Detailbanner from "../components/Detailbanner";
 
 export default function DetailPage() {
   return (
-    <div>DetailPage</div>
+    <div className="">
+      <Detailbanner/>
+    </div>
   )
 }

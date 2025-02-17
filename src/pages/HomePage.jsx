@@ -1,24 +1,33 @@
 import Header from "../components/Header";
-import MovieSilider from "../components/MovieSilider";
-import NumberCartSilider from "../components/NumberCartSilider";
+import LastTrening from "../components/LastTrening";
+import {useEffect} from 'react'
+import Searches from "../components/Searches";
+import Action from "../components/Action";
+import RomanceDrama from "../components/RomanceDrama";
+import Comedy from "../components/Comedy";
 
 export default function HomePage() {
+  useEffect(()=>{
+
+  },[])
+
   return (
     
     <div>
       <Header/>
-      <NumberCartSilider/>
+      <LastTrening></LastTrening>
       <div className="mb-2.5">
-        <MovieSilider/>
+       <Searches/>
       </div>
       <div className="mb-2.5">
-        <MovieSilider/>
+        <Action/>
       </div>
       <div className="mb-2.5">
-        <MovieSilider/>
+        <RomanceDrama/>
+    
       </div>
       <div className="mb-2.5">
-        <MovieSilider/>
+      <Comedy/>
       </div>
     </div>
     

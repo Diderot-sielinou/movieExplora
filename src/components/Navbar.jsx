@@ -1,10 +1,13 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Search } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; 
+import { useNavigate,Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [searchValue , setSearchValue] = useState("")
+  let navigate = useNavigate();
 
   // Effet pour détecter le scroll
   useEffect(() => {
@@ -14,6 +17,16 @@ export default function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  const onChange =(value)=>{
+    setSearchValue(value)
+  }
+
+  const search = (event)=>{
+    event.preventDefault();
+
+    navigate(`/search/${searchValue}`)
+    
+  }
 
   return (
     <nav
@@ -38,21 +51,21 @@ export default function Navbar() {
             {/* Navigation desktop */}
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-8">
-                {["Home", "Movies", "Series", " Trending", "Categories"].map(
+                {[ {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"/favorie",path:"favorie"},{name:"Trending",path:"#"}].map(
                   (item) => (
-                    <motion.a
+                    <motion.div
                       initial={{ opacity: 0, y: -70 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.8 }}
                       whileHover={{ scale: 1.05 }}
                       key={item}
-                      href={`/${item.toLowerCase()}`}
                       className="text-white font-Roboto hover:text-red-400 transition-colors duration-200 text-lg not-only:"
                     >
-                      {item}
-                    </motion.a>
+                      <Link to={item.path} >{item.name}</Link>
+                    </motion.div>
                   )
                 )}
+                
               </div>
             </div>
             {/* search visible sur mobile */}
@@ -60,11 +73,14 @@ export default function Navbar() {
               <div className="ml-10 flex items-baseline space-x-8 ">
                 <form className="flex items-center relative">
                   <input
+                    value={searchValue}
+                    onChange={(e) => onChange(e.target.value)}
+                    required
                     placeholder="search movie  tv"
                     className=" w-4xs h-6 py-2 relative text-sm text-white indent-4 rounded-full border-2 border-amber-50 focus:outline-0 focus:border-red-400 "
                     type="text"
                   />
-                  <button className="absolute right-4 cursor-pointer">
+                  <button onClick={(e)=>search(e)} type="submit" className="absolute right-4 cursor-pointer">
                     <Search size={16} className=" text-white  hover:bg-black" />
                   </button>
                 </form>
@@ -76,12 +92,16 @@ export default function Navbar() {
             <div className="ml-10 flex items-baseline space-x-8 ">
               <form className="flex items-center relative">
                 <input
+                  required
+                  value={searchValue}
+                  onChange={(e) => onChange(e.target.value)}
                   placeholder="search movie  tv"
-                  className=" w-4xs h-6 py-2 relative text-sm text-white indent-4 rounded-full border-2 border-amber-50 focus:outline-0 focus:border-red-400 "
+                  className=" w-4xs h-6 py-2 relative text-sm text-white indent-4 rounded-full border-2 border-amber-50 focus:outline-0 focus:border-red-400 placeholder:text-gray-500 placeholder:italic"
                   type="text"
+                  key="22"
                 />
-                <button className="absolute right-4 cursor-pointer">
-                  <Search size={16} className=" text-white  hover:bg-black" />
+                <button disabled={!searchValue} onClick={(e)=>search(e)} className={`absolute right-4 cursor-pointer disabled hover:bg-red-500 `}>
+                  <Search size={16} className=" text-white  hover:bg-red-600" />
                 </button>
               </form>
             </div>
@@ -108,15 +128,11 @@ export default function Navbar() {
           exit={{ opacity: 0, y: -20 }}
         >
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black shadow-lg">
-            {["Home", "Movies", "Series", " Trending", "Categories"].map(
-              (item) => (
-                <a
-                  key={item}
-                  href={`#${item.toLowerCase()}`}
-                  className="block px-3 py-2 text-white hover:text-red-500"
-                >
-                  {item}
-                </a>
+            { {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"/favorie",path:"favorie"},{name:"Trending",path:"#"}.map(
+              (item,index) => (
+               
+                <Link key={index}   className="block px-3 py-2 text-white hover:text-red-500" to={item.path}>{item.name}
+                </Link>
               )
             )}
           </div>
