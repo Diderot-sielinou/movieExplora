@@ -5,7 +5,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -44,11 +44,15 @@ export default function MovieSilider({ movies ,children }) {
               slidesPerView: 4.7,
             },
           }}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
           spaceBetween={30}
           slidesPerView={4.7}
           scrollbar={{ draggable: true }}
           centeredSlides={false}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           className=" w-full flex items-center mb-10 md:pl-12 h-full"
         >
           {movies?.map((movie) => (

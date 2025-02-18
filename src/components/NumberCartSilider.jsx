@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { motion } from "framer-motion";
 // import Swiper core and required modules
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
+import { Navigation, Pagination, Scrollbar, A11y,Autoplay } from "swiper/modules";
 
 // Import Swiper styles
 import "swiper/css";
@@ -49,11 +49,15 @@ export default function NumberCartSilider({treding}) {
               slidesPerView: 4.7,
             },
           }}
-          modules={[Navigation, Pagination, Scrollbar, A11y]}
+          modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
           spaceBetween={40}
           slidesPerView={4.7}
           scrollbar={{ draggable: false }}
           centeredSlides={false}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
           className=" w-full flex items-center mb-10 md:pl-12 h-full"
         >
            {treding?.map((movie,index) => (
