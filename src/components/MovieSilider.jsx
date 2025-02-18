@@ -13,8 +13,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import MoviesCart from "./MoviesCart";
+import PropTypes from "prop-types";
 
-export default function MovieSilider() {
+export default function MovieSilider({ movies ,children }) {
+ 
   return (
     <div className=" w-full  text-white pl-12 h-auto">
       <motion.div
@@ -24,7 +26,7 @@ export default function MovieSilider() {
         className="text-left mb-6"
       >
         <h2 className=" text-base font-inter md:text-[26px] font-[500] ">
-          Top Searches
+          {children}
         </h2>
       </motion.div>
       <div className="flex">
@@ -49,20 +51,18 @@ export default function MovieSilider() {
           centeredSlides={false}
           className=" w-full flex items-center mb-10 md:pl-12 h-full"
         >
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
-          <SwiperSlide><MoviesCart /></SwiperSlide>
+          {movies?.map((movie) => (
+            <SwiperSlide key={movie.id}>
+              <MoviesCart movie={movie} />
+
+            </SwiperSlide>
+          ))}
         </Swiper>
       </div>
     </div>
   );
 }
+MovieSilider.propTypes = {
+  movies: PropTypes.array,
+  children : PropTypes.node
+};

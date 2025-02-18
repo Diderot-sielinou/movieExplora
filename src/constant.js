@@ -1,0 +1,1 @@
+export  const imgPatch = "https://image.tmdb.org/t/p/w500";
