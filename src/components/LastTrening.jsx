@@ -1,17 +1,23 @@
 import NumberCartSilider from "./NumberCartSilider";
-import { useContext } from "react";
-import { DataContext } from "../context/context";
 import { useEffect, useState } from "react";
 import { getMovie } from "../api";
+import useFetch from "../hooks/useFetch";
 
 export default function LastTrening() {
-  // const [data, setData] = useState(null);
+  const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setEror] = useState(null);
-  const { treding, setTreding } = useContext(DataContext);
+  // const { treding, setTreding } = useContext(DataContext);
   useEffect(() => {
     handleget();
   }, []);
+
+  const { datas } = useFetch(
+    `${import.meta.env.VITE_BASE_URL_TRENDING}api_key=${
+      import.meta.env.VITE_API_KEY
+    }`
+  );
+  console.log("data of personal hooks",datas)
 
   const handleget = () => {
     try {
@@ -24,7 +30,8 @@ export default function LastTrening() {
           const newData = data.map((item) => {
             return { ...item, favorie: false };
           });
-          setTreding(newData);
+          // setTreding(newData);
+          setData(newData);
           setLoading(false);
         }
       });
@@ -35,7 +42,7 @@ export default function LastTrening() {
 
   if (loading) {
     return (
-      <div className="w-full text-4xl text-white text-center">
+      <div className="w-full text-4xl text-center text-amber-400">
         chargent en cour ......
       </div>
     );
@@ -43,12 +50,12 @@ export default function LastTrening() {
 
   if (error) {
     return (
-      <div className="w-full text-4xl text-red-600 text-center">{error}</div>
+      <div className="w-full text-4xl text-center text-red-600">{error}</div>
     );
   }
   return (
     <div>
-      <NumberCartSilider treding={treding} />
+      <NumberCartSilider treding={data} />
     </div>
   );
 }

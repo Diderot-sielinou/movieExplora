@@ -25,16 +25,16 @@ export default function Navbar() {
     event.preventDefault();
 
     navigate(`/search/${searchValue}`)
-    
+
   }
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`fixed  w-full z-50 transition-all duration-300 ${
         isScrolled ? "bg-transparent shadow-lg" : "bg-transparent"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="px-5 mx-auto sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-10">
           <div className="flex items-center space-x-0.5">
             {/* Logo */}
@@ -45,12 +45,12 @@ export default function Navbar() {
               transition={{ duration: 0.8 }}
             >
               <span className="ml-2 text-xl font-bold text-white">STREAM</span>
-              <X className="h-6 w-6 text-red-600 font-bold  " />
+              <X className="w-6 h-6 font-bold text-red-600 " />
             </motion.div>
 
             {/* Navigation desktop */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-8">
+              <div className="flex items-baseline ml-10 space-x-8">
                 {[ {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"favorie",path:"/favorie"},{name:"Trending",path:"#"}].map(
                   (item) => (
                     <motion.div
@@ -59,7 +59,7 @@ export default function Navbar() {
                       transition={{ duration: 0.8 }}
                       whileHover={{ scale: 1.05 }}
                       key={item}
-                      className="text-white font-Roboto hover:text-red-400 transition-colors duration-200 text-lg not-only:"
+                      className="text-lg text-white transition-colors duration-200 font-Roboto hover:text-red-400 not-only:"
                     >
                       <Link to={item.path} >{item.name}</Link>
                     </motion.div>
@@ -69,19 +69,19 @@ export default function Navbar() {
               </div>
             </div>
             {/* search visible sur mobile */}
-            <div className="md:hidden mr-6" >
-              <div className="ml-10 flex items-baseline space-x-8 ">
-                <form className="flex items-center relative">
+            <div className="mr-6 md:hidden" >
+              <div className="flex items-baseline ml-10 space-x-8 ">
+                <form className="relative flex items-center">
                   <input
                     value={searchValue}
                     onChange={(e) => onChange(e.target.value)}
                     required
                     placeholder="search movie  tv"
-                    className=" w-4xs h-6 py-2 relative text-sm text-white indent-4 rounded-full border-2 border-amber-50 focus:outline-0 focus:border-red-400 "
+                    className="relative h-6 py-2 text-sm text-white border-2 rounded-full w-4xs indent-4 border-amber-50 focus:outline-0 focus:border-red-400"
                     type="text"
                   />
-                  <button onClick={(e)=>search(e)} type="submit" className="absolute right-4 cursor-pointer">
-                    <Search size={16} className=" text-white  hover:bg-black" />
+                  <button onClick={(e)=>search(e)} type="submit" className="absolute cursor-pointer right-4">
+                    <Search size={16} className="text-white hover:bg-black" />
                   </button>
                 </form>
               </div>
@@ -89,19 +89,19 @@ export default function Navbar() {
           </div>
           {/* Navigation input */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8 ">
-              <form className="flex items-center relative">
+            <div className="flex items-baseline ml-10 space-x-8 ">
+              <form className="relative flex items-center">
                 <input
                   required
                   value={searchValue}
                   onChange={(e) => onChange(e.target.value)}
                   placeholder="search movie  tv"
-                  className=" w-4xs h-6 py-2 relative text-sm text-white indent-4 rounded-full border-2 border-amber-50 focus:outline-0 focus:border-red-400 placeholder:text-gray-500 placeholder:italic"
+                  className="relative border-2 rounded-full t-ext-white h te7xt-sm p-y-2 h- w-4xs indent-4 border-amber-50 focus:outline-0 focus:border-red-400 placeholder:text-gray-500 placeholder:italic"
                   type="text"
                   key="22"
                 />
                 <button disabled={!searchValue} onClick={(e)=>search(e)} className={`absolute right-4 cursor-pointer disabled hover:bg-red-500 `}>
-                  <Search size={16} className=" text-white  hover:bg-red-600" />
+                  <Search size={16} className="text-white hover:bg-red-600" />
                 </button>
               </form>
             </div>
@@ -128,7 +128,7 @@ export default function Navbar() {
           exit={{ opacity: 0, y: -20 }}
           
         >
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-black shadow-lg">
+          <div className="px-2 pt-2 pb-3 space-y-1 bg-black shadow-lg sm:px-3">
             { {name:"Home",path:"/"},{name:"Movies",path:"#"},{name:"Series",path:"#"},{name:"/favorie",path:"favorie"},{name:"Trending",path:"#"}.map(
               (item,index) => (
                
