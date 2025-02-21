@@ -28,7 +28,7 @@ export default function NumberCartSilider({ treding }) {
         className="text-left mb-6"
       >
         <h2 className=" text-base font-inter md:text-[26px] font-[500] ">
-          Latest & Trending
+          Latest & Trendings
         </h2>
       </motion.div>
       <div className="flex">
@@ -43,13 +43,13 @@ export default function NumberCartSilider({ treding }) {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 5,
+              slidesPerView: 6,
             },
           }}
           loop={true}
           modules={[Scrollbar, A11y, Autoplay]}
-          spaceBetween={80}
-          slidesPerView={5}
+          spaceBetween={40}
+          slidesPerView={6}
           scrollbar={{ draggable: true }}
           centeredSlides={false}
           autoplay={{
