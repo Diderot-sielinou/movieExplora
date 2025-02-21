@@ -45,12 +45,13 @@ export default function MovieSilider({ movies ,children }) {
             },
           }}
           modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
-          spaceBetween={5}
+          spaceBetween={15}
           slidesPerView={7}
           scrollbar={{ draggable: true }}
           centeredSlides={false}
+          loop={true}
           autoplay={{
-            delay: 2500,
+            delay: 3500,
             disableOnInteraction: false,
           }}
           className=" w-full flex items-center mb-10 md:pl-12 h-full"
