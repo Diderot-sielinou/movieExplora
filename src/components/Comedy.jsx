@@ -1,35 +1,37 @@
-import { useEffect, useState, useContext } from "react";
-import { DataContext } from "../context/context";
-import { getMovie } from "../api";
-import MovieSilider from "./MovieSilider";
-export default function Comedy() {
-  const [loading, setLoading] = useState(true);
-  const [error, setEror] = useState(null);
-  const { comedy, setComedy } = useContext(DataContext);
+import { useEffect } from "react";
 
+import MovieSilider from "./MovieSilider";
+import useFetch from "../hooks/useFetch";
+export default function Comedy() {
   useEffect(() => {
-    handleget();
+    // handleget();
   }, []);
 
-  const handleget = () => {
-    try {
-      getMovie(
-        `${import.meta.env.VITE_BASE_URL_To_Rated}api_key=${
-          import.meta.env.VITE_API_KEY
-        }`
-      ).then((data) => {
-        if (data) {
-          const newData = data.map((item) => {
-            return { ...item, favorie: false };
-          });
-          setComedy(newData);
-          setLoading(false);
-        }
-      });
-    } catch (Error) {
-      setEror(Error.message);
-    }
-  };
+  const { datas, loading, error } = useFetch(
+    `${import.meta.env.VITE_BASE_URL_To_Rated}api_key=${
+      import.meta.env.VITE_API_KEY
+    }`
+  );
+
+  // const handleget = () => {
+  //   try {
+  //     getMovie(
+  //       `${import.meta.env.VITE_BASE_URL_To_Rated}api_key=${
+  //         import.meta.env.VITE_API_KEY
+  //       }`
+  //     ).then((data) => {
+  //       if (data) {
+  //         const newData = data.map((item) => {
+  //           return { ...item, favorie: false };
+  //         });
+  //         setComedy(newData);
+  //         setLoading(false);
+  //       }
+  //     });
+  //   } catch (Error) {
+  //     setEror(Error.message);
+  //   }
+  // };
 
   if (loading) {
     return (
@@ -47,7 +49,7 @@ export default function Comedy() {
 
   return (
     <div>
-      <MovieSilider movies={comedy}>comedy</MovieSilider>
+      <MovieSilider delay={6000} movies={datas}>comedy</MovieSilider>
     </div>
   );
 }

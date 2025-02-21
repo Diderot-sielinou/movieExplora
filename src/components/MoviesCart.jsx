@@ -12,7 +12,7 @@ export default function MoviesCart({ movie }) {
   };
 
   return (
-    <div className="relative ">
+    <div className="relative cursor-pointer  ">
       <div className="absolute top-1 left-1">
         <Bookmark
           style={movie.favorie ? { color: "red" } : { color: "white" }}

@@ -15,7 +15,7 @@ import "swiper/css/scrollbar";
 import MoviesCart from "./MoviesCart";
 import PropTypes from "prop-types";
 
-export default function MovieSilider({ movies ,children }) {
+export default function MovieSilider({ movies ,children,delay=4500 }) {
  
   return (
     <div className=" w-full  text-white pl-12 h-auto">
@@ -51,7 +51,7 @@ export default function MovieSilider({ movies ,children }) {
           centeredSlides={false}
           loop={true}
           autoplay={{
-            delay: 3500,
+            delay: delay,
             disableOnInteraction: false,
           }}
           className=" w-full flex items-center mb-10 md:pl-12 h-full"
@@ -69,5 +69,6 @@ export default function MovieSilider({ movies ,children }) {
 }
 MovieSilider.propTypes = {
   movies: PropTypes.array,
-  children : PropTypes.node
+  children : PropTypes.node,
+  delay : PropTypes.number
 };
