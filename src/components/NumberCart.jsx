@@ -4,7 +4,7 @@ import { imgPatch } from '../constant';
 export default function NumberCart({movie,number}) {
   console.log(movie,number)
   return (
-    <div className=" relative text-left w-[250px] h-[250px] mx-2.5 flex items-center ">
+    <div className=" relative text-left w-[250px] h-[250px]  flex items-center ">
       <h1>{movie.name}</h1>
       <span className="font-Roboto text-[250px] font-[1000] z-1 ">{number}</span>
       <img

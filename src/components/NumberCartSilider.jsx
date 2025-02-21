@@ -54,7 +54,7 @@ export default function NumberCartSilider({treding}) {
           slidesPerView={4.7}
           scrollbar={{ draggable: false }}
           centeredSlides={false}
-          autoplay={{
+                    autoplay={{
             delay: 2500,
             disableOnInteraction: false,
           }}
