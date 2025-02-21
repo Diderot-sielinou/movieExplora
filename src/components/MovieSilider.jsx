@@ -35,18 +35,18 @@ export default function MovieSilider({ movies ,children }) {
           breakpoints={{
             0: {
               slidesPerView: 2,
-              spaceBetween: 150,
+              
             },
             768: {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 4.7,
+              slidesPerView: 7,
             },
           }}
           modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
-          spaceBetween={30}
-          slidesPerView={4.7}
+          spaceBetween={5}
+          slidesPerView={7}
           scrollbar={{ draggable: true }}
           centeredSlides={false}
           autoplay={{

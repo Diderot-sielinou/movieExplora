@@ -96,7 +96,7 @@ export default function Navbar() {
                   value={searchValue}
                   onChange={(e) => onChange(e.target.value)}
                   placeholder="search movie  tv"
-                  className="relative border-2 rounded-full t-ext-white h te7xt-sm p-y-2 h- w-4xs indent-4 border-amber-50 focus:outline-0 focus:border-red-400 placeholder:text-gray-500 placeholder:italic"
+                  className="relative border-2 rounded-full text-white h te7xt-sm p-y-2 h- w-4xs indent-4 border-amber-50 focus:outline-0 focus:border-red-400 placeholder:text-gray-500 placeholder:italic"
                   type="text"
                   key="22"
                 />
