@@ -31,7 +31,7 @@ export default function LastTrening() {
             return { ...item, favorie: false };
           });
           // setTreding(newData);
-          setData(newData);
+          setData(newData.slice(0,10));
           setLoading(false);
         }
       });
