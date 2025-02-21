@@ -28,7 +28,7 @@ export default function NumberCartSilider({ treding }) {
         className="text-left mb-6"
       >
         <h2 className=" text-base font-inter md:text-[26px] font-[500] ">
-          Latest & Trendings
+          Latest & Trending
         </h2>
       </motion.div>
       <div className="flex">
