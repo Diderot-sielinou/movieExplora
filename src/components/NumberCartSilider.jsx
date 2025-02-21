@@ -3,15 +3,10 @@ import PropTypes from "prop-types";
 // import { DataContext } from "../context/context";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+
 import { motion } from "framer-motion";
 // import Swiper core and required modules
 import {
-  Navigation,
-  Pagination,
   Scrollbar,
   A11y,
   Autoplay,
@@ -19,8 +14,7 @@ import {
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
+
 import "swiper/css/scrollbar";
 import { imgPatch } from "../constant";
 
@@ -51,12 +45,12 @@ export default function NumberCartSilider({ treding }) {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 4.7,
+              slidesPerView: 6,
             },
           }}
           loop={true}
-          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-          spaceBetween={10}
+          modules={[ Scrollbar, A11y, Autoplay]}
+          spaceBetween={0}
           slidesPerView="auto"
           scrollbar={{ draggable: true }}
           centeredSlides={false}
