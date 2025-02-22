@@ -15,7 +15,7 @@ import "swiper/css/scrollbar";
 import MoviesCart from "./MoviesCart";
 import PropTypes from "prop-types";
 
-export default function MovieSilider({ movies ,children }) {
+export default function MovieSilider({ movies ,children,delay=4500 }) {
  
   return (
     <div className=" w-full  text-white pl-12 h-auto">
@@ -35,22 +35,23 @@ export default function MovieSilider({ movies ,children }) {
           breakpoints={{
             0: {
               slidesPerView: 2,
-              spaceBetween: 150,
+              
             },
             768: {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 4.7,
+              slidesPerView: 7,
             },
           }}
           modules={[Navigation, Pagination, Scrollbar, A11y,Autoplay]}
-          spaceBetween={30}
-          slidesPerView={4.7}
+          spaceBetween={15}
+          slidesPerView={7}
           scrollbar={{ draggable: true }}
           centeredSlides={false}
+          loop={true}
           autoplay={{
-            delay: 2500,
+            delay: delay,
             disableOnInteraction: false,
           }}
           className=" w-full flex items-center mb-10 md:pl-12 h-full"
@@ -68,5 +69,6 @@ export default function MovieSilider({ movies ,children }) {
 }
 MovieSilider.propTypes = {
   movies: PropTypes.array,
-  children : PropTypes.node
+  children : PropTypes.node,
+  delay : PropTypes.number
 };
