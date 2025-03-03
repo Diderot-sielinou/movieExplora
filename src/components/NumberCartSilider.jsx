@@ -43,7 +43,7 @@ export default function NumberCartSilider({ treding }) {
               slidesPerView: 2,
             },
             1024: {
-              slidesPerView: 7,
+              slidesPerView: 6,
             },
           }}
           loop={true}
