@@ -49,7 +49,7 @@ export default function NumberCartSilider({ treding }) {
           loop={true}
           modules={[Scrollbar, A11y, Autoplay]}
           spaceBetween={20}
-          slidesPerView={6}
+          slidesPerView={7}
           scrollbar={{ draggable: true }}
           centeredSlides={false}
           autoplay={{
