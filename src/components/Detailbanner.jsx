@@ -22,7 +22,7 @@ export default function Detailbanner({ movie,addFavorie }) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
-        className="h-[300px] w-[80%] mx-auto md:w-[1189px]"
+        className="h-[300px] w-[80%] mx-auto md:w-full"
       >
         <div className="pl-8 w-full justify-start grid grid-cols-1 gap-3.5 text-left ">
           <h2 className="font-Roboto text-[20px] text-amber-50">
@@ -70,7 +70,7 @@ export default function Detailbanner({ movie,addFavorie }) {
               </div>
             </motion.div>
           </div>
-          <div className="text-left mt-7">
+          <div className="text-left mt-8 ">
             <p className="font-inter font-normal text-[16px] text-white">
               {movie.overview?movie.overview:"no description"}
             </p>

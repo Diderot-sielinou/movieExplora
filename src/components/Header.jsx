@@ -3,9 +3,9 @@ import { Play, ChevronRight } from "lucide-react";
 
 export default function Header() {
   const src =
-    "https://s3-alpha-sig.figma.com/img/5909/0ea8/b488be9c50166f91c91c010eec13fd2e?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=StU9gLKeReZqAL3556HA2AB8dqzH0eLyFsuDEPuP1hIoXDNG4cWwi-xx-MvC-ORjWJ-F8UiQoxmC~lB87U9Dn~82ZWHs6qqrYVl~C5plNd7qkN5dljngvLXWmsBWjzmcSFFDEd-7mEBsRAW6H0~UR0Q4kXF2OnE9eqTZhuDLWB5Oin0Of7Izji4b6nWHuejMi4tMJ5Ks0jOu8RQaOgiVnnaC5qve3d8ROF7kWzRLGyb1ajkhLw4cy9ZXLMEhj-aY6aSr-yhAmY8hDc0R2Gg3Z1pGiTC3ajhwEk06lglNxTQoSPEdRs7X8l29lGHn-m9OeFEeO13Vm6ufTszdmtOaGQ__";
+    "https://s3-alpha-sig.figma.com/img/5909/0ea8/b488be9c50166f91c91c010eec13fd2e?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=CP-ByGDm8xE34NdR6Up8xuj64Vhm17HurVuhlphwO9rNYovbrBRsIMGzAsR1WSmId2WYrMYes74S42SKXMyvITcv8WNohmVQQSNPodEB~gqHcVt63kKLmdaW5olnaeNrgvGd3HUDg78vmEpvlx8AxlkvPYW4rP1YLhUIxwjS8Z2ndhoOyVRBGux8JRaHad8TkqUjCaKFPAY5rYwNOMfIy65ks~RV~if61T3M1xzxThVHxqIFUaTedEFtfasATBx8ghQwq7aYf2Z04mh5cZ~gP7a55Y4gNRghBTtOUgzOO1gy9dyUBSgiMU~tVGw-Xd44-BLoOmNGex3g5mGh8hb8OQ__";
   const img =
-    "https://s3-alpha-sig.figma.com/img/dffb/b860/559f834e0275c009608027ccae5ee787?Expires=1740355200&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=rkpO0pLndEZ7dHynMJtiO9nZc99PuLuk24zTVIUT0MRQscYgwziIDSruNUsKcB9UqDNlHZUJqUC04E9WCs7kZg6jC1AC03vSYMBX1lGNvQYsvHGpHPyKzBBx7JtMVI8Vl0jMzhAN5Ha3CDWP-mNKGJgraDO6IQLyQnh4l5A0ASPvLjuKjVte4awXJu9XvPTBnkihWYkEW~yqnHtTzbIThNcRpkKZfExR5AnD-h8xsa3F8DaqE3rBzP6uA2Aw7BFz~Vp7AIkV62inMC26DGLemANIx9ibBrVEsDyaBbHdZAR7OmvXszESGSKES4oAyYIAFkLStffuJaweSH9z8PolvA__";
+    "https://s3-alpha-sig.figma.com/img/dffb/b860/559f834e0275c009608027ccae5ee787?Expires=1742169600&Key-Pair-Id=APKAQ4GOSFWCW27IBOMQ&Signature=KdJWE2Ubihb7TlZFqKGe2PtHncbTnNfx~y19ikPMTKpueTdoBN5Xpcr2Shy843GL-pwROrS60EY5dEeMVJ6-C2p~2hAH7TB20LY5gM7KbNSdAwszDv9UTIvY6E5oMCXm-TBxArOb82yBWAXrqEs~4OeIHctZnZuZU2KXtzbVdZkoKCKlBOSSvgPvswb~yLvegqG5jcE3fIe3EmyVzGnA6AolFgR6Peghr6m~RoamVZcmJMVO1r391DKOCgkrwEBeeKoKSzqBwoMZIEaic8i4X8JYwMZJAyHBjEJ7~vF~v8mlyT7lIYnKx7ILaLp4qT4UmfqXf5i0L-mrSZ2sBY41aQ__";
   return (
     <div className=" relative h-screen banner ">
       {/* Image d'arrière-plan */}
